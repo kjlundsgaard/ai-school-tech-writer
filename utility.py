@@ -70,7 +70,7 @@ def call_openai(prompt):
         print(f"Error making LLM call: {e}")
 
 
-def comment_on_pr(pull_request):
-    comment_message = "AI COMMENT:\n"
+def comment_on_pr(pull_request, comment):
+    comment_message = f"AI COMMENT:\n{comment}"
     pull_request.create_review(body=comment_message)
     return pull_request

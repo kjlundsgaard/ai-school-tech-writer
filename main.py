@@ -36,10 +36,10 @@ def main():
     prompt = format_data_for_openai(pull_request_diffs, readme_content, commit_messages)
 
     # Call OpenAI to generate the updated README content
-    # updated_readme = call_openai(prompt)
+    comment = call_openai(prompt)
 
     # Create PR for Updated PR
-    comment_on_pr(pull_request, commit=repo.get_commit(pull_request.head.sha))
+    comment_on_pr(pull_request, comment)
 
 if __name__ == '__main__':
     main()
