@@ -59,3 +59,4 @@ def call_openai(prompt):
 def comment_on_pr(pull_request):
     comment_message = "AI COMMENT"
     pull_request.create_comment(comment_message)
+    return pull_request
