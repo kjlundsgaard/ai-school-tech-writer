@@ -2,7 +2,7 @@ name: README Update Automation
 
 on:
   pull_request:
-    types: [closed]
+    types: [opened, reopened]
 
 jobs:
   update-readme:
