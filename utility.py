@@ -28,10 +28,8 @@ def format_data_for_openai(diffs, readme_content, commit_messages):
         f"{changes}\n"
         "Commit messages:\n"
         f"{commit_messages}"
-        "Here is the current README file content:\n"
-        f"{readme_content}\n"
-        "Consider the code changes and commit messages, determine if the README needs to be updated. If so, edit the README, ensuring to maintain its existing style and clarity.\n"
-        "Updated README:\n"
+        "Consider the code changes, commit messages, and documentation snippets. Create a two to three sentence comment on the PR that describes how the dependencies are being used\n"
+        "Relevant docs:\n"
     )
     print(prompt)
 

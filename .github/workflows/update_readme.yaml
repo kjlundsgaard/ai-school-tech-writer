@@ -1,4 +1,4 @@
-name: README Update Automation
+name: Add additional PR context
 
 on:
   pull_request:
@@ -8,7 +8,6 @@ jobs:
   update-readme:
     name: Update README after PR merge
     runs-on: ubuntu-latest
-    if: github.event.pull_request.opened == true
 
     steps:
       # Check out the repo to access its content
