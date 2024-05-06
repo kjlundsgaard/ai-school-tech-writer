@@ -32,13 +32,9 @@ def format_data_for_openai(diffs, readme_content, commit_messages):
     # Construct the prompt with clear instructions for the LLM.
     prompt = (
         "Please review the following code changes and commit messages from a GitHub pull request:\n"
-        "Code changes from Pull Request:\n"
-        f"{changes}\n"
-        "Commit messages:\n"
-        f"{commit_messages}"
-        "Consider the code changes, commit messages, and documentation snippets. Create a two to three sentence comment on the PR that describes how the dependencies are being used\n"
         "Relevant docs:\n"
         f"{docs}"
+        "Consider the documentation snippets provided, create a two to three sentence comment on each piece of documentation explaining its function for the PR\n"
     )
 
     print(prompt)
@@ -47,7 +43,7 @@ def format_data_for_openai(diffs, readme_content, commit_messages):
 
 def get_docs_from_pinecone(changes):
     # Add Pinecone API call here to get most relevant documentation
-    results = vectorstore.similarity_search(changes, k=5)
+    results = vectorstore.similarity_search(changes, k=3)
     
     return "\n".join(result.page_content for result in results)
 
