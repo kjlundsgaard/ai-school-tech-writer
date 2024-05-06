@@ -31,7 +31,7 @@ def format_data_for_openai(diffs, readme_content, commit_messages):
         "Consider the code changes, commit messages, and documentation snippets. Create a two to three sentence comment on the PR that describes how the dependencies are being used\n"
         "Relevant docs:\n"
     )
-    
+
     print(prompt)
 
     return prompt
@@ -55,7 +55,7 @@ def call_openai(prompt):
         print(f"Error making LLM call: {e}")
 
 
-def comment_on_pr(pull_request):
+def comment_on_pr(pull_request, commit, path = "", position = 0):
     comment_message = "AI COMMENT"
-    pull_request.create_comment(comment_message)
+    pull_request.create_comment(comment_message, commit, path, position)
     return pull_request
