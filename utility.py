@@ -31,6 +31,7 @@ def format_data_for_openai(diffs, readme_content, commit_messages):
         "Consider the code changes, commit messages, and documentation snippets. Create a two to three sentence comment on the PR that describes how the dependencies are being used\n"
         "Relevant docs:\n"
     )
+    
     print(prompt)
 
     return prompt
