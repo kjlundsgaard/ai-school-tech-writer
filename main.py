@@ -39,7 +39,7 @@ def main():
     # updated_readme = call_openai(prompt)
 
     # Create PR for Updated PR
-    comment_on_pr(pull_request, commit=repo.get_commit(pull_request.head.sha), path="README.md", position=0)
+    comment_on_pr(pull_request, commit=repo.get_commit(pull_request.head.sha), path="README.md", position=1)
 
 if __name__ == '__main__':
     main()
