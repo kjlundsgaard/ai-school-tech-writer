@@ -57,5 +57,5 @@ def call_openai(prompt):
 
 def comment_on_pr(pull_request, commit, path = "", position = 0):
     comment_message = "AI COMMENT"
-    pull_request.create_comment(comment_message, commit, path, position)
+    pull_request.create_review(body=comment_message)
     return pull_request
